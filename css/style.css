@@ -191,6 +191,7 @@ html {
 
 .site__header {
   -webkit-animation: bounceInUp 1s;
+  margin-top: 100px;
 }
 
   .site__title {

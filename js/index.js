@@ -17,8 +17,6 @@ const cssBlock = document.getElementById("formattedBlockCss");
 const htmlBlock = document.getElementById("formattedBlockHtml");
 
 
-
-
 trigger.onclick = (e) => {
     e.preventDefault();
     var anim = animation.value;
@@ -49,10 +47,11 @@ const showCss = (x) => {
         if (e.selectors && e.selectors.indexOf("." + x) > -1) {
             return e
         }
+        if (e.selectors && e.selectors.indexOf(".animated") > -1) {
+            return e
+        }
     }).filter((e) => e != undefined)
     
     cssBlock.innerHTML = Prism.highlight(css.stringify(cssObject), Prism.languages.css, 'css');
-    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css');
-
-    
+    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css'); 
 }
