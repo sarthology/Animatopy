@@ -182,7 +182,6 @@ html {
   body {
     display: inline-block;
     vertical-align: middle;
-    max-width: 38rem;
   }
 }
 
@@ -224,4 +223,22 @@ html {
   to {
     -webkit-filter: hue-rotate(-360deg);
   }
+}
+
+.css-block{
+  height: 400px;
+  width: 800px;
+}
+.html-block{
+  height: 50px;
+  width: 800px;
+}
+
+.code-section h2{
+  text-align: left;
+}
+
+.code-section{
+  opacity: 0;
+  transition: opacity 1s;
 }

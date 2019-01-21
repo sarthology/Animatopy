@@ -1,14 +1,23 @@
 'use strict';
 
 const css = require('css');
-const animateJson = require('../data/animate.json')
-
-const animationSandbox = document.querySelector('#animationSandbox')
-const trigger = document.querySelector('.js--triggerAnimation');
-const animation = document.querySelector('.js--animations');
+const Prism = require('prismjs');
 
 require("../css/animate.min.css");
 require("../css/style.css");
+require("prismjs/themes/prism-tomorrow.css");
+
+const animateJson = require('../data/animate.json');
+
+const animationSandbox = document.querySelector('#animationSandbox');
+const trigger = document.querySelector('.js--triggerAnimation');
+const animation = document.querySelector('.js--animations');
+const codeSection = document.querySelector('.code-section');
+const cssBlock = document.getElementById("formattedBlockCss");
+const htmlBlock = document.getElementById("formattedBlockHtml");
+
+
+
 
 trigger.onclick = (e) => {
     e.preventDefault();
@@ -31,8 +40,9 @@ const testAnim = (x) => {
 };
 
 const showCss = (x) => {
-    
-    animateJson.stylesheet.rules = animateJson.stylesheet.rules.map((e) => {
+    let cssObject = JSON.parse(JSON.stringify(animateJson));
+    codeSection.setAttribute("style","opacity:1");
+    cssObject.stylesheet.rules = cssObject.stylesheet.rules.map((e) => {
         if (e.name === x) {
             return e
         }
@@ -41,5 +51,8 @@ const showCss = (x) => {
         }
     }).filter((e) => e != undefined)
     
-    document.getElementById("cssCode").innerHTML = css.stringify(animateJson);
+    cssBlock.innerHTML = Prism.highlight(css.stringify(cssObject), Prism.languages.css, 'css');
+    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css');
+
+    
 }

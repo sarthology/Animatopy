@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
 
@@ -6,7 +7,10 @@ module.exports = {
     entry: {
         index: './js/index.js'
     },
-
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
+    },
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
         port: 8080
@@ -24,14 +28,15 @@ module.exports = {
         })
     ],
     module: {
-        rules:[
-            {
-                test: /\.css$/,
-                use:[
-                    {loader:"style-loader"},
-                    {loader:"css-loader"}
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.css$/,
+            use: [{
+                    loader: "style-loader"
+                },
+                {
+                    loader: "css-loader"
+                }
+            ]
+        }]
     }
 };
