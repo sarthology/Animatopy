@@ -1,0 +1,20 @@
+{
+  "name": "animatopy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sarthology",
+  "license": "ISC",
+  "dependencies": {
+    "css": "^2.2.4"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
+  }
+}
