@@ -39,7 +39,7 @@ const testAnim = (x) => {
 
 const showCss = (x) => {
     let cssObject = JSON.parse(JSON.stringify(animateJson));
-    codeSection.setAttribute("style","opacity:1");
+    codeSection.setAttribute("style", "opacity:1");
     cssObject.stylesheet.rules = cssObject.stylesheet.rules.map((e) => {
         if (e.name === x) {
             return e
@@ -51,7 +51,7 @@ const showCss = (x) => {
             return e
         }
     }).filter((e) => e != undefined)
-    
+
     cssBlock.innerHTML = Prism.highlight(css.stringify(cssObject), Prism.languages.css, 'css');
-    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css'); 
+    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css');
 }
