@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'docs')
     },
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
