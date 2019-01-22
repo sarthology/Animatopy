@@ -3,7 +3,9 @@
 \*-----------------------------------*/
 
 body {
+  width: 100%;
   overflow-x: hidden;
+  margin-top: 0;
 }
 
 *,
@@ -253,6 +255,11 @@ html {
 }
 
 .code-section {
+  display: inline-block;
   opacity: 0;
   transition: opacity 1s;
+}
+
+.github-link {
+  float: right;
 }
