@@ -16,6 +16,16 @@ const codeSection = document.querySelector('.code-section');
 const cssBlock = document.getElementById("formattedBlockCss");
 const htmlBlock = document.getElementById("formattedBlockHtml");
 
+document.onreadystatechange = function () {
+    var state = document.readyState;
+    if (state === 'interactive') {
+        document.body.style.display = "none";
+    } else if (state === 'complete') {
+        setTimeout(function () {
+            document.body.style.display = "block";
+        }, 1000);
+    }
+}
 
 trigger.onclick = (e) => {
     e.preventDefault();
