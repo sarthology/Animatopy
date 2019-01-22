@@ -1,11 +1,12 @@
 {
   "name": "animatopy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Snippets for animate.css library, why download whole library for few animations.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.dev.js --mode development"
+    "start": "webpack-dev-server --config webpack.dev.js --mode development",
+    "build":"webpack --config webpack.dev.js --mode development"
   },
   "author": "Sarthology",
   "license": "ISC",
