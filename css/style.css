@@ -167,12 +167,11 @@ a:hover {
   $BASE
 \*-----------------------------------*/
 
-html {
+body {
   font: 100%/1.5 "Roboto", Verdana, sans-serif;
   color: #3d464d;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
-  width: 100%;
 
   overflow: hidden-x;
 
@@ -181,14 +180,10 @@ html {
 }
 
 @media (min-width: 650px) {
-  html {
-    height: 100%;
-  }
 
-  html:before {
+  body:before {
     content: '';
     display: inline-block;
-    height: 100%;
     vertical-align: middle;
     margin-right: -0.25em;
   }
@@ -245,7 +240,7 @@ html {
   width: 800px;
 }
 
-.html-block {
+.body-block {
   height: 50px;
   width: 800px;
 }
