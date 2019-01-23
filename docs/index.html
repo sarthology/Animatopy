@@ -4,27 +4,41 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Animatopy</title>
-    <link rel="shortcut icon" href="topy.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="docs/topy.ico" type="image/x-icon">
 
-    
+
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="Animatopy" />
     <meta property="og:title" content="Animatopy - CSS Animation Snippets">
     <meta property="og:description" content="Adding the whole animate.css file in your web-projects is a pain for many people. Here's a quick and easy solution. Ready-to-use code snippets for all your animation needs!">
     <meta property="og:url" content="https://sarthology.github.io/Animatopy/">
-    
+
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:widgets:new-embed-design" content="on">
     <meta name="twitter:site" content="@_TeamXenox">
     <meta name="twitter:creator" content="@Sarthology">
     <meta name="twitter:title" content="Animatopy - CSS Animation Snippets">
     <meta name="twitter:description" content="Adding the whole animate.css file in your web-projects is a pain for many people. Here's a quick and easy solution. Ready-to-use code snippets for all your animation needs!">
-    <meta property="og:image" content="https://i.imgur.com/i1lgAIj.png">
-    <meta name="twitter:image:src" content="https://i.imgur.com/i1lgAIj.png">
+    <meta property="og:image" content="https://i.imgur.com/8x6WDml.png">
+    <meta name="twitter:image:src" content="https://i.imgur.com/8x6WDml.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133005848-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-133005848-1');
+    </script>
 </head>
 
-<body>
-    <a target="_blank" href="https://github.com/sarthology/Animatopy" class="github-link">
+<body style="display: none;">
+    <img id="producthun-banner" src="docs/producthunt-banner.png">
+
+    <a target="_blank" href="https://github.com/sarthology/Animatopy" id="github-link">
         <img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_darkblue_121621.png?resize=149%2C149"
             class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
     </a>
@@ -166,12 +180,15 @@
                 <button class="butt js--triggerAnimation">Animate it</button>
             </form>
             <hr>
-            <p class="meta">No need to Download Animate.css, Just copy the code</p>
+            <p class="meta">No need to Download Animate.css, Just copy the code.</p>
             <p>
                 <small>
                     You can thank this guy <a href="https://daneden.me/">Daniel Eden</a>
                     or <a target="_blank" href="https://twitter.com/home?status=I%20just%20found%20this%20really%20neat%20tool%20to%20add%20animation%20to%20your%20code!%20Check%20out%20Animatopy%20by%20%40sarthology%20%40_teamxenox%3A%20https%3A//bit.ly/2MmwsKV%0A">me</a>.
                 </small>
+            </p>
+            <p>
+                <small>Made with ❤ by <a target="_blank" class="teamxenox-web" href="https://teamxenox.com"> 🔥 TeamXenox</a></small>
             </p>
         </div>
     </main>
@@ -181,6 +198,13 @@
         <h2>CSS:</h2>
         <pre class="css-block"><code id="formattedBlockCss" class="language-css"></code></pre>
     </div>
+
+    <script>
+        var urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('ref') === 'producthunt') {
+            document.getElementById('producthun-banner').style.display = 'inline-block';
+        }
+    </script>
 <script type="text/javascript" src="bundle.js"></script></body>
 
 </html>
