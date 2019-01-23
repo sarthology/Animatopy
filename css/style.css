@@ -258,6 +258,18 @@ body {
   transition: opacity 1s;
 }
 
-.github-link {
-  float: right;
+#github-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#producthun-banner {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.teamxenox-web {
+  text-decoration: none;
 }
