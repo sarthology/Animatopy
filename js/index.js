@@ -41,7 +41,7 @@ animation.onchange = (e) => {
 }
 const testAnim = (x) => {
     animationSandbox.className = " ";
-    animationSandbox.classList += x + ' animated';
+    animationSandbox.classList +='animate__'+ x + ' animate__animated';
     animationSandbox.addEventListener('animationend', (e) => {
         e.currentTarget.className = " ";
     }, false);
@@ -54,14 +54,20 @@ const showCss = (x) => {
         if (e.name === x) {
             return e
         }
-        if (e.selectors && e.selectors.indexOf("." + x) > -1) {
+        else if (e.selectors && e.selectors.indexOf(".animate__" + x) > -1) {
             return e
         }
-        if (e.selectors && e.selectors.indexOf(".animated") > -1) {
+        else if (e.selectors && e.selectors.indexOf(".animate__animated") > -1) {
             return e
         }
-    }).filter((e) => e != undefined)
+        else if (e.selectors && e.selectors.indexOf(":root") > -1) {
+            return e
+        }
+        else {
+            return undefined
+        }
+    }).filter((e) => e !== undefined)
 
     cssBlock.innerHTML = Prism.highlight(css.stringify(cssObject), Prism.languages.css, 'css');
-    htmlBlock.innerHTML = Prism.highlight(`<div class="animated ${x}">Example</div>`, Prism.languages.css, 'css');
+    htmlBlock.innerHTML = Prism.highlight(`<div class="animate__animated animate__${x}">Example</div>`, Prism.languages.css, 'css');
 }
